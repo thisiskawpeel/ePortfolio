@@ -126,32 +126,6 @@ function showNote(msg, type) {
    
 }
 
-// Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Typing animation restart
-        setTimeout(() => {
-            const typingText = document.querySelector('.typing-text');
-            typingText.style.animation = 'none';
-            typingText.offsetHeight; /* trigger reflow */
-            typingText.style.animation = 'typing 3s steps(40, end), blink-caret 0.75s step-end infinite';
-        }, 4000);
-
 // ── Smooth scroll for all anchor links ──
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', (e) => {
