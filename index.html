@@ -1,345 +1,384 @@
-
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kapil Dev Pudasaini — Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Kapil Dev Pudasaini</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- ───── NAVBAR ───── -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-inner">
-      <a href="#hero" class="nav-logo">KD<span class="accent">.</span></a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#about"    class="nav-link">About</a></li>
-        <li><a href="#skills"   class="nav-link">Skills</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#journey"  class="nav-link">Journey</a></li>
-        <li><a href="#contact"  class="nav-link">Contact</a></li>
-      </ul>
-      <div class="nav-controls">
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-          <i class="fas fa-moon" id="themeIcon"></i>
-        </button>
-        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
+
+  <!-- NOISE OVERLAY -->
+  <div class="noise"></div>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a href="#" class="nav-mark">KD</a>
+    <ul class="nav-list">
+      <li><a href="#about" class="nav-a">About</a></li>
+      <li><a href="#skills" class="nav-a">Skills</a></li>
+      <li><a href="#projects" class="nav-a">Projects</a></li>
+      <li><a href="#journey" class="nav-a">Journey</a></li>
+      <li><a href="#contact" class="nav-a">Contact</a></li>
+    </ul>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu">
+      <span></span><span></span>
+    </button>
   </nav>
 
-  <!-- ───── HERO ───── -->
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about" class="mm-link">About</a></li>
+      <li><a href="#skills" class="mm-link">Skills</a></li>
+      <li><a href="#projects" class="mm-link">Projects</a></li>
+      <li><a href="#journey" class="mm-link">Journey</a></li>
+      <li><a href="#contact" class="mm-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ═══ HERO ═══ -->
   <section class="hero" id="hero">
-    <div class="hero-grid-overlay"></div>
-    <div class="hero-content">
-      <p class="hero-greeting reveal">Hello, I'm</p>
-      <h1 class="hero-name reveal">Kapil Dev<br><span class="accent">Pudasaini</span></h1>
-      <div class="hero-title-wrap reveal">
-        <span class="hero-tag">Cybersecurity Student</span>
-        <span class="hero-tag">Web Developer</span>
-        <span class="hero-tag">Tech Enthusiast</span>
+    <div class="hero-bg-text" aria-hidden="true">KAPIL</div>
+
+    <div class="hero-left">
+      <div class="hero-badge slide-up">
+        <span class="badge-dot"></span>
+        Open to opportunities
       </div>
-      <p class="hero-bio reveal">
-        I'm Kapil—a cybersecurity student passionate about building secure and efficient digital systems. I enjoy developing web applications, exploring threat intelligence, and creating interactive projects like games.
-      </p>
-      <div class="hero-cta reveal">
-        <a href="#projects" class="btn btn-primary">View Projects</a>
-        <a href="#contact"  class="btn btn-outline">Contact Me</a>
+      <h1 class="hero-h1 slide-up delay-1">
+        <span class="line-wrap"><span>Kapil</span></span>
+        <span class="line-wrap"><span>Dev</span></span>
+        <span class="line-wrap accent-line"><span>Pudasaini</span></span>
+      </h1>
+      <div class="hero-roles slide-up delay-2">
+        <span>Cybersecurity Student</span>
+        <span class="sep">×</span>
+        <span>Web Developer</span>
+        <span class="sep">×</span>
+        <span>Tech Enthusiast</span>
       </div>
     </div>
-    <div class="hero-visual reveal">
-      <div class="terminal-card">
-        <div class="terminal-bar">
-          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-          <span class="terminal-title">kapil@portfolio:~</span>
-        </div>
-        <div class="terminal-body">
-          <p><span class="t-prompt">$</span> Whoami</p>
-          <p class="t-out">kapil_dev_pudasaini</p>
-          <p><span class="t-prompt">$</span> What I love</p>
-          <p class="t-out">cybersecurity | web dev | game dev</p>
-          <p><span class="t-prompt">$</span> Looking forward</p>
-          <p class="t-out accent">open_to_opportunities</p>
-          <p><span class="t-prompt">$</span> <span class="cursor-blink">█</span></p>
-        </div>
+
+    <div class="hero-right slide-up delay-3">
+      <p class="hero-desc">
+        Building secure, efficient digital systems from Chitwan, Nepal. Currently in BSc Cybersecurity & Digital Forensics — obsessed with how things break and how to make them unbreakable.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn-main">View Work <i class="fas fa-arrow-right"></i></a>
+        <a href="mailto:kapilpudasaini1@gmail.com" class="btn-ghost">Say hello</a>
       </div>
+      <div class="hero-scroll-hint">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </div>
+
+    <!-- Floating terminal -->
+    <div class="float-term" id="floatTerm">
+      <div class="ft-bar">
+        <div class="ft-dots">
+          <span class="fdt r"></span><span class="fdt y"></span><span class="fdt g"></span>
+        </div>
+        <span class="ft-title">~/portfolio</span>
+      </div>
+      <div class="ft-body">
+        <div class="ft-line"><span class="ft-ps">❯</span> <span class="ft-cmd" id="typeTarget"></span><span class="ft-cursor">▋</span></div>
+        <div class="ft-output" id="ftOutput"></div>
+      </div>
+    </div>
+
+    <!-- Floating stat cards -->
+    <div class="stat-float sf-1">
+      <div class="sf-num">BSc</div>
+      <div class="sf-label">Cybersecurity</div>
+    </div>
+    <div class="stat-float sf-2">
+      <div class="sf-num">5+</div>
+      <div class="sf-label">Languages</div>
     </div>
   </section>
 
-  <!-- ───── ABOUT ───── -->
+  <!-- ═══ ABOUT ═══ -->
   <section class="section" id="about">
+    <div class="section-num">01</div>
     <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">01 / About</span>
-        <h2 class="section-title">Who I Am</h2>
+      <div class="section-head">
+        <h2 class="section-h2 reveal">Who I Am</h2>
+        <div class="section-line reveal"></div>
       </div>
-      <div class="about-grid">
-        <div class="about-avatar reveal">
-          <div class="avatar-hex">
-            <div class="avatar-inner">
-              <i class="fas fa-shield-halved fa-3x accent"></i>
+      <div class="about-layout">
+        <div class="about-visual reveal">
+          <div class="av-box">
+            <div class="av-inner">
+              <i class="fas fa-shield-halved av-icon"></i>
+              <div class="av-rings">
+                <div class="ring r1"></div>
+                <div class="ring r2"></div>
+                <div class="ring r3"></div>
+              </div>
+            </div>
+            <div class="av-tags">
+              <span><i class="fas fa-graduation-cap"></i> BSc Cybersecurity</span>
+              <span><i class="fas fa-map-marker-alt"></i> Chitwan, Nepal</span>
+              <span><i class="fas fa-terminal"></i> Open to Work</span>
             </div>
           </div>
-          <div class="about-stats">
-            <div class="stat-pill"><i class="fas fa-graduation-cap"></i> BSc Cybersecurity</div>
-            <div class="stat-pill"><i class="fas fa-map-marker-alt"></i> Chitwan, Nepal</div>
-            <div class="stat-pill"><i class="fas fa-code"></i> Open to Work</div>
-          </div>
         </div>
-        <div class="about-text reveal">
-          <p>I'm a first-semester <strong>BSc (Hons) Cybersecurity and Digital Forensics</strong> student at ISMT College, Chitwan.</p>
-          <p>I have a strong interest in cybersecurity, web development, and game development. I enjoy building real-world projects and learning how systems work—from secure web apps to performance-focused applications.</p>
-          <p>When I'm not coding, I like analyzing <strong>Formula 1 performance data</strong>  <strong></strong>.</p>
-          <p>I'm currently growing my skills and looking for opportunities to <strong>learn, collaborate, and improve</strong> as a developer.</p>
-          <a href="mailto:kapilpudasaini1@gmail.com" class="btn btn-primary" style="margin-top:1.5rem">Get In Touch</a>
+        <div class="about-copy reveal">
+          <p class="about-lead">First-semester <em>BSc (Hons) Cybersecurity and Digital Forensics</em> student at ISMT College, Chitwan.</p>
+          <p>I have a strong interest in cybersecurity, web development, and game development. I enjoy building real-world projects and learning how systems work — from secure web apps to performance-focused applications.</p>
+          <p>When I'm not coding, I'm deep into <strong>Formula 1 performance data</strong> — finding patterns where others see noise.</p>
+          <p>I'm growing my skills and looking for opportunities to <strong>learn, collaborate, and push my limits</strong> as a developer.</p>
+          <a href="mailto:kapilpudasaini1@gmail.com" class="btn-main" style="margin-top:2rem; display:inline-flex;">Let's talk <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ───── SKILLS ───── -->
-  <section class="section section-alt" id="skills">
+  <!-- ═══ SKILLS ═══ -->
+  <section class="section section-dark" id="skills">
+    <div class="section-num">02</div>
     <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">02 / Skills</span>
-        <h2 class="section-title">What I Work With</h2>
+      <div class="section-head">
+        <h2 class="section-h2 reveal">What I Work With</h2>
+        <div class="section-line reveal"></div>
       </div>
-      <div class="skills-grid">
-
-        <div class="skill-card reveal">
-          <div class="skill-card-header">
-            <i class="fas fa-globe"></i>
-            <h3>Frontend</h3>
-          </div>
-          <ul class="skill-list">
-            <li><i class="fab fa-html5"></i> HTML</li>
-            <li><i class="fab fa-css3-alt"></i> CSS</li>
+      <div class="skills-layout">
+        <div class="skill-block reveal">
+          <div class="sk-num">01</div>
+          <div class="sk-icon"><i class="fas fa-globe"></i></div>
+          <h3 class="sk-title">Frontend</h3>
+          <ul class="sk-list">
+            <li><i class="fab fa-html5"></i> HTML5</li>
+            <li><i class="fab fa-css3-alt"></i> CSS3</li>
             <li><i class="fab fa-js-square"></i> JavaScript</li>
           </ul>
         </div>
-
-        <div class="skill-card reveal">
-          <div class="skill-card-header">
-            <i class="fas fa-terminal"></i>
-            <h3>Programming</h3>
-          </div>
-          <ul class="skill-list">
+        <div class="skill-block reveal delay-1">
+          <div class="sk-num">02</div>
+          <div class="sk-icon"><i class="fas fa-terminal"></i></div>
+          <h3 class="sk-title">Programming</h3>
+          <ul class="sk-list">
             <li><i class="fas fa-copyright"></i> C</li>
             <li><i class="fas fa-plus-square"></i> C++</li>
             <li><i class="fas fa-hashtag"></i> C#</li>
             <li><i class="fab fa-python"></i> Python</li>
           </ul>
         </div>
-
-        <div class="skill-card reveal">
-          <div class="skill-card-header">
-            <i class="fas fa-wrench"></i>
-            <h3>Tools</h3>
-          </div>
-          <ul class="skill-list">
+        <div class="skill-block reveal delay-2">
+          <div class="sk-num">03</div>
+          <div class="sk-icon"><i class="fas fa-wrench"></i></div>
+          <h3 class="sk-title">Tools</h3>
+          <ul class="sk-list">
             <li><i class="fab fa-git-alt"></i> Git</li>
             <li><i class="fab fa-github"></i> GitHub</li>
             <li><i class="fas fa-code"></i> VS Code</li>
           </ul>
         </div>
-
-        <div class="skill-card reveal">
-          <div class="skill-card-header">
-            <i class="fas fa-lightbulb"></i>
-            <h3>Interests</h3>
-          </div>
-          <ul class="skill-list">
+        <div class="skill-block reveal delay-3">
+          <div class="sk-num">04</div>
+          <div class="sk-icon"><i class="fas fa-lightbulb"></i></div>
+          <h3 class="sk-title">Interests</h3>
+          <ul class="sk-list">
             <li><i class="fas fa-shield-halved"></i> Cybersecurity</li>
-            <li><i class="fas fa-laptop-code"></i> Web Development</li>
-            <li><i class="fas fa-gamepad"></i> Game Development</li>
+            <li><i class="fas fa-laptop-code"></i> Web Dev</li>
+            <li><i class="fas fa-gamepad"></i> Game Dev</li>
             <li><i class="fas fa-microchip"></i> System Optimization</li>
           </ul>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ───── PROJECTS ───── -->
+  <!-- ═══ PROJECTS ═══ -->
   <section class="section" id="projects">
+    <div class="section-num">03</div>
     <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">03 / Projects</span>
-        <h2 class="section-title">Things I've Built</h2>
-        <p class="section-title">A collection of conceptual and prototype projects showcasing my skills in development and cybersecurity</p>
+      <div class="section-head">
+        <h2 class="section-h2 reveal">Things I've Built</h2>
+        <div class="section-line reveal"></div>
+        <p class="section-sub reveal">Conceptual and prototype projects showcasing skills in development and cybersecurity.</p>
       </div>
-      <div class="projects-grid">
+      <div class="projects-layout">
 
-        <!-- Project Card -->
-        <article class="project-card reveal">
-          <div class="project-card-top">
-            <div class="project-icon"><i class="fas fa-shield-halved"></i></div>
-            <div class="project-links">
-              <a href="" target="_blank" rel="noopener" aria-label="Live demo">
-                <i class="fas fa-arrow-up-right-from-square"></i>
-              </a>
-              <a href="" target="_blank" rel="noopener" aria-label="GitHub">
-                <i class="fab fa-github"></i>
-              </a>
+        <article class="proj-card reveal">
+          <div class="pc-header">
+            <div class="pc-num">001</div>
+            <div class="pc-links">
+              <a href="" target="_blank" aria-label="Live demo"><i class="fas fa-arrow-up-right-from-square"></i></a>
+              <a href="" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
             </div>
           </div>
-          <h3 class="project-title">KawPeel Protects</h3>
-          <p class="project-desc">A web-based project demonstrating development and UI design skills with a focus on clean user experience and front-end craftsmanship.</p>
-          <div class="project-stack">
+          <div class="pc-icon"><i class="fas fa-shield-halved"></i></div>
+          <h3 class="pc-title">KawPeel Protects</h3>
+          <p class="pc-desc">A web-based project demonstrating development and UI design skills with a focus on clean user experience and front-end craftsmanship.</p>
+          <div class="pc-stack">
             <span>HTML</span><span>CSS</span><span>JavaScript</span>
           </div>
         </article>
 
-                <!-- Project Card -->
-        <article class="project-card reveal">
-          <div class="project-card-top">
-            <div class="project-icon"><i class="fas fa-shield-halved"></i></div>
-            <div class="project-links">
-              <a href="https://thisiskawpeel.github.io/cybersafehub/" target="_blank" rel="noopener" aria-label="Live demo">
-                <i class="fas fa-arrow-up-right-from-square"></i>
-              </a>
-              <a href="https://github.com/thisiskawpeel" target="_blank" rel="noopener" aria-label="GitHub">
-                <i class="fab fa-github"></i>
-              </a>
+        <article class="proj-card reveal delay-1">
+          <div class="pc-header">
+            <div class="pc-num">002</div>
+            <div class="pc-links">
+              <a href="https://thisiskawpeel.github.io/cybersafehub/" target="_blank" rel="noopener" aria-label="Live demo"><i class="fas fa-arrow-up-right-from-square"></i></a>
+              <a href="https://github.com/thisiskawpeel" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
             </div>
           </div>
-          <h3 class="project-title">CybersafeHub</h3>
-          <p class="project-desc">CyberSafe Hub is an interactive cybersecurity toolkit that helps users analyze password strength, detect phishing attempts, and generate secure hashes to improve online safety.</p>
-          <div class="project-stack">
+          <div class="pc-icon"><i class="fas fa-lock"></i></div>
+          <h3 class="pc-title">CybersafeHub</h3>
+          <p class="pc-desc">Interactive cybersecurity toolkit — analyze password strength, detect phishing attempts, generate secure hashes. Improving online safety one check at a time.</p>
+          <div class="pc-stack">
             <span>HTML</span><span>CSS</span><span>JavaScript</span>
           </div>
         </article>
 
-        <!-- Placeholder card — easy to duplicate for more projects -->
-        <article class="project-card project-placeholder reveal">
-          <div class="project-card-top">
-            <div class="project-icon"><i class="fas fa-plus"></i></div>
+        <article class="proj-card proj-more reveal delay-2">
+          <div class="pm-inner">
+            <i class="fas fa-plus pm-plus"></i>
+            <h3>More Coming Soon</h3>
+            <p>Actively building. Follow along on GitHub.</p>
+            <a href="https://github.com/thisiskawpeel" target="_blank" rel="noopener" class="btn-ghost" style="margin-top:1.5rem">GitHub Profile <i class="fab fa-github"></i></a>
           </div>
-          <h3 class="project-title">More Coming Soon</h3>
-          <p class="project-desc">I'm actively building new projects. Check back or follow my GitHub for updates.</p>
-          <a href="" target="_blank" rel="noopener" class="btn btn-outline" style="margin-top:auto">GitHub Profile</a>
         </article>
 
       </div>
     </div>
   </section>
 
-  <!-- ───── JOURNEY ───── -->
-  <section class="section section-alt" id="journey">
+  <!-- ═══ JOURNEY ═══ -->
+  <section class="section section-dark" id="journey">
+    <div class="section-num">04</div>
     <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">04 / Journey</span>
-        <h2 class="section-title">My Path So Far</h2>
+      <div class="section-head">
+        <h2 class="section-h2 reveal">My Path So Far</h2>
+        <div class="section-line reveal"></div>
       </div>
       <div class="timeline">
-
-        <div class="timeline-item reveal">
-          <div class="timeline-dot"><i class="fas fa-graduation-cap"></i></div>
-          <div class="timeline-content">
-            <span class="timeline-date">2026 — Present</span>
-            <h3>BSc Cybersecurity & Digital Forensics</h3>
-            <p>Enrolled at ISMT College, Chitwan. Studying core concepts in cybersecurity, networking, and digital forensics as a first-semester student.</p>
+        <div class="tl-item reveal">
+          <div class="tl-year">2026</div>
+          <div class="tl-bar"><div class="tl-dot"></div></div>
+          <div class="tl-body">
+            <span class="tl-tag">Education</span>
+            <h3>BSc Cybersecurity &amp; Digital Forensics</h3>
+            <p>Enrolled at ISMT College, Chitwan. Studying core concepts in cybersecurity, networking, and digital forensics.</p>
           </div>
         </div>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-dot"><i class="fas fa-code"></i></div>
-          <div class="timeline-content">
-            <span class="timeline-date">Ongoing</span>
-            <h3>Learning Web Development & Programming</h3>
+        <div class="tl-item reveal delay-1">
+          <div class="tl-year">Now</div>
+          <div class="tl-bar"><div class="tl-dot"></div></div>
+          <div class="tl-body">
+            <span class="tl-tag">Learning</span>
+            <h3>Web Development &amp; Programming</h3>
             <p>Building skills in HTML, CSS, JavaScript, C, C++, C#, and Python through self-study, coursework, and hands-on projects.</p>
           </div>
         </div>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-dot"><i class="fas fa-rocket"></i></div>
-          <div class="timeline-content">
-            <span class="timeline-date">Ongoing</span>
-            <h3>Building Personal Projects</h3>
+        <div class="tl-item reveal delay-2">
+          <div class="tl-year">Now</div>
+          <div class="tl-bar"><div class="tl-dot"></div></div>
+          <div class="tl-body">
+            <span class="tl-tag">Building</span>
+            <h3>Personal Projects</h3>
             <p>Developing real-world projects to apply knowledge and build a portfolio. KawPeel Protects is the first of many planned releases.</p>
           </div>
         </div>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-dot"><i class="fas fa-shield-halved"></i></div>
-          <div class="timeline-content">
-            <span class="timeline-date">Ongoing</span>
-            <h3>Exploring Cybersecurity & Threat Intelligence</h3>
-            <p>Diving deeper into cybersecurity concepts, learning about attack vectors, defensive techniques, and threat analysis methodologies.</p>
+        <div class="tl-item reveal delay-3">
+          <div class="tl-year">Now</div>
+          <div class="tl-bar"><div class="tl-dot"></div></div>
+          <div class="tl-body">
+            <span class="tl-tag">Research</span>
+            <h3>Cybersecurity &amp; Threat Intelligence</h3>
+            <p>Diving deeper into attack vectors, defensive techniques, and threat analysis methodologies.</p>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ───── CONTACT ───── -->
+  <!-- ═══ CONTACT ═══ -->
   <section class="section" id="contact">
+    <div class="section-num">05</div>
     <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">05 / Contact</span>
-        <h2 class="section-title">Let's Connect</h2>
+      <div class="section-head">
+        <h2 class="section-h2 reveal">Let's Connect</h2>
+        <div class="section-line reveal"></div>
       </div>
-      <div class="contact-grid">
-
-        <div class="contact-info reveal">
-          <p class="contact-intro">I'm open to internships, freelance projects, and collaboration. Feel free to reach out!</p>
+      <div class="contact-layout">
+        <div class="contact-left reveal">
+          <p class="contact-intro">Open to internships, freelance projects, and collaboration. If you have something interesting — let's talk.</p>
           <div class="contact-links">
-            <a href="mailto:kapilpudasaini1@gmail.com" class="contact-link">
-              <i class="fas fa-envelope"></i>
-              <span>kapilpudasaini1@gmail.com</span>
+            <a href="mailto:kapilpudasaini1@gmail.com" class="cl-item">
+              <span class="cl-icon"><i class="fas fa-envelope"></i></span>
+              <div>
+                <span class="cl-label">Email</span>
+                <span class="cl-val">kapilpudasaini1@gmail.com</span>
+              </div>
+              <i class="fas fa-arrow-right cl-arr"></i>
             </a>
-            <a href="https://github.com/thisiskawpeel" target="_blank" rel="noopener" class="contact-link">
-              <i class="fab fa-github"></i>
-              <span>github.com/thisiskawpeel</span>
+            <a href="https://github.com/thisiskawpeel" target="_blank" rel="noopener" class="cl-item">
+              <span class="cl-icon"><i class="fab fa-github"></i></span>
+              <div>
+                <span class="cl-label">GitHub</span>
+                <span class="cl-val">github.com/thisiskawpeel</span>
+              </div>
+              <i class="fas fa-arrow-right cl-arr"></i>
             </a>
-            <a href="https://www.linkedin.com/in/kapil-dev-pudasaini-51756534a" target="_blank" rel="noopener" class="contact-link">
-              <i class="fab fa-linkedin"></i>
-              <span>linkedin.com/in/kapil-dev-pudasaini</span>
+            <a href="https://www.linkedin.com/in/kapil-dev-pudasaini-51756534a" target="_blank" rel="noopener" class="cl-item">
+              <span class="cl-icon"><i class="fab fa-linkedin"></i></span>
+              <div>
+                <span class="cl-label">LinkedIn</span>
+                <span class="cl-val">kapil-dev-pudasaini</span>
+              </div>
+              <i class="fas fa-arrow-right cl-arr"></i>
             </a>
           </div>
         </div>
-
-        <form class="contact-form reveal" id="contactForm">
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Your name" required />
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="your@email.com" required />
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="What's on your mind?" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary" style="width:100%">
-            <i class="fas fa-paper-plane"></i> Send Message
-          </button>
-          <p class="form-note" id="formNote"></p>
-        </form>
-
+        <div class="contact-right reveal delay-1">
+          <form id="cForm" class="cform">
+            <div class="cf-row">
+              <div class="cf-group">
+                <label for="cf-name">Name</label>
+                <input type="text" id="cf-name" placeholder="Your name" required />
+              </div>
+              <div class="cf-group">
+                <label for="cf-email">Email</label>
+                <input type="email" id="cf-email" placeholder="your@email.com" required />
+              </div>
+            </div>
+            <div class="cf-group">
+              <label for="cf-msg">Message</label>
+              <textarea id="cf-msg" rows="5" placeholder="What's on your mind?" required></textarea>
+            </div>
+            <button type="submit" class="btn-main" style="width:100%; justify-content:center;">
+              Send Message <i class="fas fa-paper-plane"></i>
+            </button>
+            <p class="cf-note" id="cfNote"></p>
+          </form>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ───── FOOTER ───── -->
+  <!-- FOOTER -->
   <footer class="footer">
-    <div class="container">
-      <p>Designed & built by <span class="accent">Kapil Dev Pudasaini</span> · 2026</p>
+    <div class="container footer-inner">
+      <span class="footer-mark">KD.</span>
+      <p>Designed &amp; built by <span class="acc">Kapil Dev Pudasaini</span> · 2026</p>
       <p class="footer-sub">BSc Cybersecurity · ISMT College · Nepal</p>
     </div>
   </footer>
 
-  <!-- Scroll to top -->
-  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+  <!-- SCROLL TOP -->
+  <button class="stb" id="stb" aria-label="Back to top">
     <i class="fas fa-chevron-up"></i>
   </button>
 
